@@ -1,0 +1,233 @@
+@font-face {
+  font-family: 'Belleza';
+  src: url('https://fonts.gstatic.com/s/belleza/v9/0nkoC9_pNeMfhX4BhcH4ag.woff2')
+}
+
+body {
+  font-family: 'Belleza';
+  font-size: 18px;
+}
+
+button {
+  cursor:pointer;
+  padding:0.5em;
+  background-color:cadetblue;
+  border:none;
+  margin: 2px 5px;
+  border-radius:5px;
+  color:white;
+  font-family:'Belleza';
+  font-size:1em;
+  display:block;
+}
+
+button:hover {
+  opacity:0.8;
+  transition:all 0.2s ease;
+}
+
+/* Sidebar */
+
+#sidebar {
+  min-height:100vh;
+  background-color:rgba(0,0,0,0.75);
+  width: 250px;
+  display:flex;
+  flex-direction:column;
+}
+
+#logo {
+  width:60px;
+}
+
+#logo-title {
+  font-size:3em;
+  display:flex;
+  align-items:center;
+  padding:1rem;
+  color:white;
+}
+
+#new-project {
+  margin-bottom:2em;
+}
+
+/* Main/Notes */
+
+main {
+  flex:1;
+}
+
+#content {
+  display:flex;
+}
+
+#main-header {
+  text-align:center;
+  font-size:2.5em;
+  background-color:rgba(95, 158, 160, 0.8);
+  padding: 0.4em 0;
+}
+
+#notes {
+  width:80%;
+  margin:1em auto;
+}
+
+.header {
+  font-size:1.2em;
+  border-bottom:1px solid rgb(95, 158, 160);
+  padding-bottom:0.4em;
+}
+
+.note {
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align:center;
+  margin-bottom:1em;
+  align-items:center;
+}
+
+.task-link,
+.status-button {
+  cursor:pointer;
+  border-radius:5px;
+  padding:0.5em;
+}
+
+.task-link:hover,
+.status-button:hover {
+  background-color:rgba(95, 158, 160, 0.3);
+  transition:all 0.2s ease;
+}
+
+/* Task Form */
+
+#form-container,
+#edit-container,
+#project-container {
+  position:absolute;
+  top:0;
+  left:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  height: 100vh;
+  width:100vw;
+  background-color:rgba(0,0,0,0.5);
+}
+
+#task-form,
+#edit-form,
+#project-form {
+  display:flex;
+  flex-direction:column;
+  max-width:400px;
+  position:absolute;
+  top:30%;
+  padding:1em;
+  background-color:white;
+  border: 1px solid lightgrey;
+  border-radius:5px;
+}
+
+#task-form > *,
+#edit-form > * {
+  padding:1em;
+  resize:none;
+  border-radius:5px;
+  border:1px solid grey;
+  margin-bottom:4px;
+}
+
+#create-task,
+#update-task,
+#create-project {
+  margin: 2px 0;
+}
+
+#delete-task {
+  padding:0.3em;
+  background-color:rgb(255, 75, 75);
+  width:120px;
+  margin: 2px auto;
+}
+
+#description {
+  height: 100px;
+}
+
+#close-form,
+#close-edit,
+#close-project {
+  font-size:2em;
+  align-self:flex-end;
+  padding:0.2em;
+  border:none;
+  height:40px;
+  width:40px;
+  text-align:center;
+}
+
+#close-form:hover,
+#close-edit:hover,
+#close-form:focus,
+#close-edit:focus,
+#close-project:hover {
+  cursor:pointer;
+  color:black;
+  background-color:lightgrey;
+  transition:all 0.2s ease;
+}
+
+@media (orientation: portrait) and (max-width:680px) {
+  #sidebar {
+    display:none;
+    position:absolute;
+    width:100%;
+    background-color:rgb(60,60,60);
+  }
+
+  #main-header {
+    font-size:2em;
+    padding:1rem 0;
+  }
+
+  #menu {
+    position: absolute;
+    right:1em;
+    top:0.5em;
+    cursor:pointer;
+    padding:0.5em;
+    border-radius:5px;
+  }
+
+  #menu:hover {
+    background-color:rgba(0,0,0,0.2);
+    transition:all 0.2s ease;
+  }
+
+  .menu-bar {
+    width: 35px;
+    height: 4px;
+    background-color: black;
+    margin: 6px 0;
+    border-radius:1px;
+  }
+
+  #logo-title {
+    font-size:2em;
+  }
+
+  #logo {
+    width:40px;
+  }
+
+  .priority {
+    display:none;
+  }
+
+  .note {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

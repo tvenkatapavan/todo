@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDoer</title>
+  <!-- <link rel='stylesheet', href='css/reset.css'> -->
+  <!-- <link rel='stylesheet', type='text/css', href='css/style.css'> -->
+</head>
+<body>
+  <div id='content'>
+    <div id='form-container'>
+      <form id='task-form'>
+        <span id='close-form'>&times;</span>
+
+        <input placeholder='Title', type='text', id='title'>
+        <textarea placeholder='Description', id='description'></textarea>
+
+        <div>
+          <label for='dueDate'>Due Date</label>
+          <input type='date', id='dueDate', name='dueDate'>
+
+          <label for='priority'>Priority</label>
+          <select name='priority' id='priority'>
+            <option value='high'>High</option>
+            <option value='normal' selected>Normal</option>
+            <option value='low'>Low</option>
+          </select>
+        </div>
+
+        <button id='create-task'>Create Task</button>
+      </form>
+    </div>
+    <div id='edit-container'>
+      <form id='edit-form'>
+        <span id='close-edit'>&times;</span>
+
+        <input placeholder='Title', type='text', id='title'>
+        <textarea placeholder='Description', id='description'></textarea>
+        <div>
+          <label for='dueDate'>Due Date</label>
+          <input type='date', id='dueDate', name='dueDate'>
+        </div>
+        <div>
+          <label for='priority'>Priority</label>
+          <select name='priority' id='priority'>
+            <option value='high'>High</option>
+            <option value='normal' selected>Normal</option>
+            <option value='low'>Low</option>
+          </select>
+        </div>
+
+        <input type='hidden', id='editId'>
+        <button id='update-task'>Update Task</button>
+        <button id='delete-task'>Delete Task</button>
+      </form>
+    </div>
+    <div id='project-container'>
+      <form id='project-form'>
+        <span id='close-project'>&times;</span>
+        <input placeholder='Project Name', id='projectName'>
+        <button id='create-project'>Create Project</button>
+      </form>
+    </div>
+
+    <aside id='sidebar'>
+      <span id='logo-title'>ToDo</span>
+      <button id='new-task'>New Task</button>
+      <button id='new-project'>New Project</button>
+      <button id='default-tasks'>Tasks</button>
+      <ul id='projects'>
+      </ul>
+    </aside>
+    <main id='main'>
+      <h1 id='main-header'>
+        Tasks
+      </h1>
+      <div id='menu'>
+        <div class='menu-bar'></div>
+        <div class='menu-bar'></div>
+        <div class='menu-bar'></div>
+      </div>
+      <ul id='notes'>
+        <li class='note header'>
+          <span>Task</span>
+          <span>Due Date</span>
+          <span class='priority'>Priority</span>
+          <span>Status</span>
+        </li>
+      </ul>
+    </main>
+  </div>
+  <script src='main.js'></script>
+</body>
+</html>
